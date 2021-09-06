@@ -34,7 +34,7 @@ public class ProductAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         ProductHolder productHolder = (ProductHolder) holder;
         Product model = listProduct.get(position);
-        ProductHolder.ivCover.setImageResource(model.getImage());
+        productHolder.ivCover.setImageResource(model.getImage());
         productHolder.tvName.setText(model.getName());
         productHolder.tvPrice.setText(model.getPrice());
 
@@ -46,8 +46,7 @@ public class ProductAdapter extends RecyclerView.Adapter {
     }
 
     public static class ProductHolder extends RecyclerView.ViewHolder {
-        @SuppressLint("StaticFieldLeak")
-        static ImageView ivCover;
+        ImageView ivCover;
         TextView tvName;
         TextView tvPrice;
 
